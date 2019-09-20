@@ -1,0 +1,21 @@
+image:
+  file: .gitpod.Dockerfile
+
+# List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/43_config_ports/
+ports:
+- port: 8888
+  onOpen: ignore
+
+# List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/44_config_start_tasks/
+tasks:
+- command: |
+    gp await-port 8888
+    gp preview $(gp url 8888)/notebooks/demo.ipynb
+- init: |
+    cd qboost
+    python3 -m venv qboost_env
+    source qboost_env/bin/activate
+    pip install -r requirements.txt
+    pip install notebook
+  command: |
+    jupyter notebook --ip='0.0.0.0' --NotebookApp.token='' --NotebookApp.password=''
