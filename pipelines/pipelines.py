@@ -48,6 +48,10 @@ print(S)
 
 # Visualize the results
 k = G.subgraph(S)
+
+
+
+
 notS = list(set(G.nodes()) - set(S))
 othersubgraph = G.subgraph(notS)
 pos = nx.spring_layout(G)
