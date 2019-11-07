@@ -15,9 +15,8 @@ tasks:
       python3 -m pip install -r requirements.txt
     )
   command: |
-    (
-      cd pipelines
-      echo
-      echo "Running 'python3 pipelines.py' demo!"
-      python3 pipelines.py
-    )
+    cd pipelines
+    gp open pipelines.py
+    echo
+    echo "Running 'python3 pipelines.py' demo!"
+    python3 pipelines.py
