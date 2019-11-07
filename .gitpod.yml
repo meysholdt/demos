@@ -20,3 +20,5 @@ tasks:
     echo
     echo "Running 'python3 pipelines.py' demo!"
     python3 pipelines.py
+
+workspaceLocation: /
